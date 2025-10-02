@@ -140,3 +140,9 @@ export PATH=$BUN_INSTALL/bin:$PATH
 if [ -n "$(command -v go)" ]; then
   export GOPATH="$(dirname $(which go))"
 fi
+
+# Deno Version Manager
+export DVM_DIR="$HOME/.dvm"
+[ -f "$DVM_DIR/dvm.sh" ] && . "$DVM_DIR/dvm.sh"
+[ -f "$DVM_DIR/bash_completion" ] && . "$DVM_DIR/bash_completion"
+

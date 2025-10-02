@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
@@ -282,6 +282,24 @@
   "C_Cpp.copilotHover": "disabled",
   "chat.agent.enabled": false,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+  },
+  "docker.extension.dockerEngineAvailabilityPrompt": false,
+  "mcpServers": {},
+  "jdk.telemetry.enabled": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 }
