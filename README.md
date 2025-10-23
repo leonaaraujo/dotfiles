@@ -1,4 +1,4 @@
-# Bruno Araujo dotfiles
+# Leona Araujo dotfiles
 
 Just my files back-up and/or reference.  
 
