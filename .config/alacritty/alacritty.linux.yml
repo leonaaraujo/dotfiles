@@ -1,0 +1,20 @@
+colors:
+  primary:
+    background: '#0E0B0B'
+
+font:
+  normal:
+    family: 'FiraCode Nerd Font'
+  size: 18.0
+
+window:
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: false
+  # decorations: none
+  # startup_mode: Fullscreen
+  opacity: 0.85
+
+shell:
+  program: '/bin/bash'

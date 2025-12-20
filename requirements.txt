@@ -1,0 +1,5 @@
+wheel
+distutils
+neovim
+pynvim
+jedi
