@@ -327,5 +327,6 @@
   "workbench.colorCustomizations": {},
   "mdb.mcp.server": "autoStartEnabled",
   "chat.disableAIFeatures": true,
-  "chat.commandCenter.enabled": false
+  "chat.commandCenter.enabled": false,
+  "terminal.integrated.focusAfterRun": "terminal"
 }
