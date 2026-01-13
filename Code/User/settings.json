@@ -8,16 +8,19 @@
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "git.autofetch": true,
-  "workbench.editor.pinnedTabSizing": "compact",
   "git.confirmSync": false,
+  "git.mergeEditor": false,
+  "mergeEditor.diffAlgorithm": "legacy",
+  "workbench.editor.pinnedTabSizing": "compact",
   "python.languageServer": "Pylance",
+  "python.terminal.activateEnvironment": false,
+  "python.analysis.typeCheckingMode": "standard",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook",
     "*.db": "sqlite-viewer.option"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "python.terminal.activateEnvironment": false,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
