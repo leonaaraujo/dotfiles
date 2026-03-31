@@ -15,12 +15,13 @@
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvironment": false,
   "python.analysis.typeCheckingMode": "standard",
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "ts.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook",
-    "*.db": "sqlite-viewer.option"
+    "*.db": "sqlite-viewer.option",
+    "git-rebase-todo": "default"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js.updateImportsOnFileMove.enabled": "always",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",

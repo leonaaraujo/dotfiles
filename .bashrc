@@ -120,6 +120,7 @@ test -d "$HOME/.rd/bin" && export PATH="$HOME/.rd/bin:$PATH"
 export VOLTA_FEATURE_PNPM=1
 
 test -d "$HOME/.tfenv/bin" && export PATH="$HOME/.tfenv/bin:$PATH"
+test -d "$HOME/.tofuenv/bin" && export PATH="$HOME/.tofuenv/bin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
