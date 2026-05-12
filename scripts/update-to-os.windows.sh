@@ -2,7 +2,7 @@
 
 proj_home="$(dirname $0)/.."
 
-alacritty_conf="$proj_home/.config/alacritty/alacritty.windows.yml"
+alacritty_conf="$proj_home/.config/alacritty/alacritty.windows.toml"
 nvim_conf="$proj_home/.config/nvim/init.vim"
 vim_conf="$proj_home/.vimrc"
 vscode_conf="$proj_home/Code/User/settings.json"
@@ -19,7 +19,7 @@ test -d "$HOME/.oh-my-bash/themes/gitbasher" || mkdir -p "$HOME/.oh-my-bash/them
 
 cp -v "$nvim_conf" "$HOME/AppData/Local/nvim/init.vim"
 cp -v "$vim_conf" "$HOME/.vimrc"
-cp -v "$alacritty_conf" "$HOME/AppData/Roaming/alacritty/alacritty.yml"
+cp -v "$alacritty_conf" "$HOME/AppData/Roaming/alacritty/alacritty.toml"
 cp -v "$vscode_conf" "$HOME/AppData/Roaming/Code/User/settings.json"
 cp -v "$vscodium_conf" "$HOME/scoop/apps/vscodium/current/data/user-data/User/settings.json"
 cp -v "$bash_conf" "$HOME/.bashrc"

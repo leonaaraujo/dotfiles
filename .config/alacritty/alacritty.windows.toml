@@ -1,0 +1,22 @@
+[colors.primary]
+background = "#0E0B0B"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[terminal.shell]
+args = ["-i", "-l"]
+program = 'C:\Program Files\Git\usr\bin\bash'
+
+[window]
+dynamic_padding = false
+opacity = 0.85
+
+[window.padding]
+x = 0
+y = 0
+
+[terminal]

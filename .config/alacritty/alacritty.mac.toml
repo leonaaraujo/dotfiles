@@ -1,0 +1,18 @@
+[colors.primary]
+background = "#0E0B0B"
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[window]
+dynamic_padding = false
+opacity = 0.85
+
+[window.padding]
+x = 0
+y = 0
+
+[terminal]
