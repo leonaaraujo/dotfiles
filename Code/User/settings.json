@@ -15,13 +15,11 @@
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvironment": false,
   "python.analysis.typeCheckingMode": "standard",
-  "ts.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook",
     "*.db": "sqlite-viewer.option",
     "git-rebase-todo": "default"
   },
-  "js.updateImportsOnFileMove.enabled": "always",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -277,7 +275,6 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
-  "prisma.showPrismaDataPlatformNotification": false,
   "makefile.configureOnOpen": true,
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
@@ -286,7 +283,6 @@
   "cmake.options.statusBarVisibility": "compact",
   "solidity.telemetry": true,
   "files.autoSave": "afterDelay",
-  "haskell.manageHLS": "GHCup",
   "dart.openDevTools": "flutter",
   "[mjml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -301,8 +297,6 @@
     "editor.formatOnSave": false,
   },
   "docker.extension.dockerEngineAvailabilityPrompt": false,
-  "mcpServers": {},
-  "jdk.telemetry.enabled": true,
   "[dockercompose]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -331,6 +325,5 @@
   "workbench.colorCustomizations": {},
   "mdb.mcp.server": "autoStartEnabled",
   "chat.disableAIFeatures": true,
-  "chat.commandCenter.enabled": false,
-  "terminal.integrated.focusAfterRun": "terminal"
+  "terminal.integrated.focusAfterRun": "terminal",
 }
