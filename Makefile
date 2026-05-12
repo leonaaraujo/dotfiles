@@ -4,7 +4,7 @@
 
 .DEFAULT_GOAL := help
 help:
-	@cat Makefile 
+	@cat Makefile
 
 install:
 	./scripts/install.sh
