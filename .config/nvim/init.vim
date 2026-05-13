@@ -31,7 +31,6 @@ call plug#begin('~/.nvim/plugged')
   " git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'APZelos/blamer.nvim'
 
   " git diff
   Plug 'nvim-lua/plenary.nvim'
@@ -70,10 +69,6 @@ call plug#end()
 " shortcuts
 nnoremap <C-s> :w<CR> " save
 tnoremap <Esc> <C-\><C-n> " terminal go to normal mode
-
-" Hybrid line numbers
-"set number relativenumber
-"set nu rnu
 
 " Render whitespaces
 set list listchars=space:·
@@ -126,9 +121,6 @@ command! GitGutterEnable
 nnoremap <leader>g <cmd>:GitGutterDisable<cr>
 nnoremap <leader>gg <cmd>:GitGutterEnable<cr>
 
-" git blame
-let g:blamer_enabled = 1
-
 " silversearcher
 nnoremap <silent> <C-p> :Ag<cr>
 
@@ -140,3 +132,7 @@ require('mason-lspconfig').setup({
   ensure_installed = { "vtsls" },
 })
 EOF
+
+" windows bash fix
+set shell=bash
+set shellcmdflag=-c
