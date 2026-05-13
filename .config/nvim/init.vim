@@ -13,10 +13,6 @@ call plug#begin('~/.nvim/plugged')
   " filetree
   Plug 'kyazdani42/nvim-tree.lua'
 
-  " lsp
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
-
   " auto-formatter
   Plug 'sbdchd/neoformat'
 
@@ -59,6 +55,15 @@ call plug#begin('~/.nvim/plugged')
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install --frozen-lockfile --production',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+  " debugger
+  Plug 'puremourning/vimspector'
+
+  " LSP + mason
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -116,15 +121,6 @@ nnoremap <silent> <C-b> :NvimTreeToggle<CR>
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
-" lsp install setup
-lua << EOF
-local lsp_installer = require("nvim-lsp-installer").setup {}
---lsp_installer.on_server_ready(function(server)
-    --local opts = {}
-    --server:setup(opts)
---end)
-EOF
-
 " git gutter
 command! GitGutterEnable
 nnoremap <leader>g <cmd>:GitGutterDisable<cr>
@@ -135,3 +131,12 @@ let g:blamer_enabled = 1
 
 " silversearcher
 nnoremap <silent> <C-p> :Ag<cr>
+
+" vtsts
+lua << EOF
+require('mason').setup()
+require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = { "vtsls" },
+})
+EOF
