@@ -1,3 +1,7 @@
+" ----------------------------------------------------------------------------------------------------------------------------------
+" PLUGINS
+" ----------------------------------------------------------------------------------------------------------------------------------
+
 call plug#begin('~/.nvim/plugged')
 
   " theme
@@ -36,25 +40,6 @@ call plug#begin('~/.nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'sindrets/diffview.nvim'
 
-  " searching
-  " obs.: needs silversearcher-ag
-  " sudo apt install -y silversearcher-ag
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-
-  " styled components
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-  " html
-  Plug 'mattn/emmet-vim'
-
-  " godot
-  Plug 'habamax/vim-godot'
-
-  Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install --frozen-lockfile --production',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-
   " debugger
   Plug 'puremourning/vimspector'
 
@@ -64,7 +49,23 @@ call plug#begin('~/.nvim/plugged')
   Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'neovim/nvim-lspconfig'
 
+  " LSPSaga
+  Plug 'nvimdev/lspsaga.nvim'
+
+  " git blame
+  Plug 'f-person/git-blame.nvim'
+
+  " Telescope
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' }
+  Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
+
+
+" ----------------------------------------------------------------------------------------------------------------------------------
+" ESSENTIALS SETUP
+" ----------------------------------------------------------------------------------------------------------------------------------
 
 " shortcuts
 nnoremap <C-s> :w<CR> " save
@@ -74,6 +75,19 @@ tnoremap <Esc> <C-\><C-n> " terminal go to normal mode
 set list listchars=space:·
 nnoremap <leader>w <cmd>set list listchars=space:·<cr>
 nnoremap <leader>ww <cmd>set list listchars=<cr>
+
+" mouse
+nnoremap <leader>m <cmd>set mouse-=a<cr>
+nnoremap <leader>mm <cmd>set mouse+=a<cr>
+
+" windows bash fix
+set shell=bash
+set shellcmdflag=-c
+
+
+" ----------------------------------------------------------------------------------------------------------------------------------
+" PLUGINS SETUP
+" ----------------------------------------------------------------------------------------------------------------------------------
 
 " theme
 syntax on
@@ -89,11 +103,6 @@ EOF
 " tabs
 nnoremap <silent> <Tab> :BufferNext<CR>
 nnoremap <silent> <C-c> :BufferClose<CR>
-
-" mouse
-"set mouse+=a
-nnoremap <leader>m <cmd>set mouse-=a<cr>
-nnoremap <leader>mm <cmd>set mouse+=a<cr>
 
 " tree.lua setup
 lua << EOF
@@ -121,18 +130,39 @@ command! GitGutterEnable
 nnoremap <leader>g <cmd>:GitGutterDisable<cr>
 nnoremap <leader>gg <cmd>:GitGutterEnable<cr>
 
-" silversearcher
-nnoremap <silent> <C-p> :Ag<cr>
+" Telescope
+nnoremap <silent> <C-p> :Telescope find_files<cr>
 
-" vtsts
+" auto-formatter
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" LSPSaga
 lua << EOF
-require('mason').setup()
+local saga = require('lspsaga')
+saga.setup({})
+EOF
+
+" LSP servers
+lua << EOF
+vim.lsp.enable({ 'omnisharp', 'prismals' })
+EOF
+
+" Mason
+lua << EOF
+require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+    },
+})
 require('mason-lspconfig').setup()
 require('mason-lspconfig').setup({
   ensure_installed = { "vtsls" },
 })
 EOF
-
-" windows bash fix
-set shell=bash
-set shellcmdflag=-c
