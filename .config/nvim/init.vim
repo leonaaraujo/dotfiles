@@ -84,6 +84,13 @@ nnoremap <leader>mm <cmd>set mouse+=a<cr>
 set shell=bash
 set shellcmdflag=-c
 
+" indent
+lua << EOF
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+EOF
 
 " ----------------------------------------------------------------------------------------------------------------------------------
 " PLUGINS SETUP
