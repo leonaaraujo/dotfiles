@@ -3,7 +3,7 @@ case $- in   # bash executions flags list.
 *) return ;; # else break.
 esac
 
-export OSH=$HOME/.oh-my-bash
+export OSH="$HOME/.oh-my-bash"
 
 OSH_THEME="gitbasher" # custom theme
 
@@ -12,6 +12,7 @@ OMB_USE_SUDO=true
 completions=(
   awscli
   brew
+  composer
   defaults
   django
   docker-compose
