@@ -23,17 +23,19 @@ python -m pip install --upgrade pip
 pip install -r "$proj_home/requirements.txt"
 
 # Install dotnet sdk
-wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
-sudo apt-get update; \
-  sudo apt-get install -y apt-transport-https && \
-  sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-5.0
-sudo apt-get update; \
-  sudo apt-get install -y apt-transport-https && \
-  sudo apt-get update && \
-  sudo apt-get install -y aspnetcore-runtime-5.0
+command -v dotnet || {
+  wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+  sudo dpkg -i packages-microsoft-prod.deb
+  rm packages-microsoft-prod.deb
+  sudo apt-get update; \
+    sudo apt-get install -y apt-transport-https && \
+    sudo apt-get update && \
+    sudo apt-get install -y dotnet-sdk-5.0
+  sudo apt-get update; \
+    sudo apt-get install -y apt-transport-https && \
+    sudo apt-get update && \
+    sudo apt-get install -y aspnetcore-runtime-5.0
+}
 
 # Install alacritty
 sudo apt update
@@ -56,13 +58,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install oh-my-bash
 bash -c "$(curl -sSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
-# Install vscode
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt update
-sudo apt install -y code
-
-# TODO: install vscode plugins.
+# Install volta + node
+curl https://get.volta.sh | bash
+volta install node@latest
+volta install npm@latest
 
 # Install tmux plugin manager
 git clone git@github.com:tmux-plugins/tpm ~/.tmux/plugins/tpm
