@@ -21,6 +21,7 @@ cp .config/alacritty/alacritty.windows.yml $HOME/AppData/Roaming/alacritty/alacr
 - [alacritty](.config/alacritty/alacritty.windows.yml)
 - [vscode](Code/User/settings.json)
 - [tmux](.tmux.conf)
+- [zed](.config/zed/settings.json)
 
 ---
 ### Dependencies
@@ -40,3 +41,4 @@ cp .config/alacritty/alacritty.windows.yml $HOME/AppData/Roaming/alacritty/alacr
 - [vim-plug](https://github.com/junegunn/vim-plug#installation)
 - [oh-my-bash](https://github.com/ohmybash/oh-my-bash#basic-installation)
 - [vscode](https://code.visualstudio.com/download)
+- [zed](https://zed.dev)

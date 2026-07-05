@@ -1,0 +1,53 @@
+{
+  "diff_view_style": "split",
+  "vim_mode": false,
+  "agent": {
+    "enabled": false,
+    "button": false,
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_family": "FiraCode Nerd Font",
+  "file_types": {
+    "html": ["*.xml", "*.svg"],
+    "typescriptreact": ["*.tsx"],
+    "fsharp": ["*.fs"]
+  },
+  "auto_indent_on_paste": false,
+  "use_on_type_format": false,
+  "show_whitespaces": "all",
+  "show_edit_predictions": true,
+  "line_ending": "prefer_lf",
+  "soft_wrap": "editor_width",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme"
+  },
+  "base_keymap": "VSCode",
+  "cli_default_open_behavior": "existing_window",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Pink - High Contrast"
+  },
+  "terminal": {
+    "dock": "right",
+    "shell": {
+      "program": "C:\\Program Files\\Git\\bin\\bash.exe"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  }
+}
