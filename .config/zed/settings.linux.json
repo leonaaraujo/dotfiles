@@ -1,4 +1,21 @@
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
   "diff_view_style": "split",
   "vim_mode": false,
   "agent": {
@@ -10,21 +27,25 @@
   "minimap": {
     "show": "never"
   },
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 1000
-    }
-  },
+  "autosave": "off",
+  "format_on_save": "off",
   "buffer_font_family": "FiraCode Nerd Font",
   "file_types": {
-    "html": ["*.xml", "*.svg"],
-    "typescriptreact": ["*.tsx"],
-    "fsharp": ["*.fs"]
+    "html": [
+      "*.xml",
+      "*.svg"
+    ],
+    "typescriptreact": [
+      "*.tsx"
+    ],
+    "fsharp": [
+      "*.fs"
+    ]
   },
   "auto_indent_on_paste": false,
   "use_on_type_format": false,
   "show_whitespaces": "all",
-  "show_edit_predictions": true,
+  "show_edit_predictions": false,
   "line_ending": "prefer_lf",
   "soft_wrap": "editor_width",
   "icon_theme": {
