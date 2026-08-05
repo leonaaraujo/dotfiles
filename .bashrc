@@ -149,3 +149,7 @@ export DVM_DIR="$HOME/.dvm"
 [ -f "$DVM_DIR/dvm.sh" ] && . "$DVM_DIR/dvm.sh"
 [ -f "$DVM_DIR/bash_completion" ] && . "$DVM_DIR/bash_completion"
 
+# Alias: usar "docker-compose" chamando o plugin "docker compose"
+if ! command -v docker-compose &> /dev/null; then
+  alias docker-compose='docker compose'
+fi
