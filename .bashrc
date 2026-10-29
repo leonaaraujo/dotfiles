@@ -115,7 +115,7 @@ MACOS_PY_BIN_FOLDER="/Library/Frameworks/Python.framework/Versions/3.11/bin"
 test -d $MACOS_PY_BIN_FOLDER && export PATH="$MACOS_PY_BIN_FOLDER:${PATH}"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="$HOME/.rd/bin:$PATH"
+test -d "$HOME/.rd/bin" && export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 export VOLTA_FEATURE_PNPM=1
@@ -148,7 +148,7 @@ export DVM_DIR="$HOME/.dvm"
 [ -f "$DVM_DIR/dvm.sh" ] && . "$DVM_DIR/dvm.sh"
 [ -f "$DVM_DIR/bash_completion" ] && . "$DVM_DIR/bash_completion"
 
-# Alias: usar "docker-compose" chamando o plugin "docker compose"
+# Alias: use "docker-compose" calling the plugin "docker compose"
 if ! command -v docker-compose &> /dev/null; then
   alias docker-compose='docker compose'
 fi
