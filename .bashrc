@@ -140,8 +140,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # go
 if [ -n "$(command -v go)" ]; then
-  export GOPATH="$(dirname $(which go))"
-  export PATH="$PATH:$GOPATH/bin"
+  export PATH="$PATH:$(cygpath -u "$(go env GOPATH)")/bin"
 fi
 
 # Deno Version Manager

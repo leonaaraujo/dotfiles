@@ -121,6 +121,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false,
+    "diffEditor.ignoreTrimWhitespace": true,
   },
   "docker.extension.dockerEngineAvailabilityPrompt": false,
   "[dockercompose]": {
@@ -169,5 +170,6 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ]
+  ],
+  "workbench.settings.applyToAllProfiles": []
 }
